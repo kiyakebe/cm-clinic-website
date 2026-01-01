@@ -52,7 +52,7 @@ const Doctors: React.FC = () => {
           </div>
           <div className="lg:max-w-sm lg:pb-2">
             <Paragraph className="mb-10 text-lg font-medium leading-relaxed">
-              Our board is comprised of tenured researchers and surgeons from the world's leading medical institutions, curated for cross-disciplinary excellence.
+              Our board is comprised of tenured researchers and surgeons from the world&apos;s leading medical institutions, curated for cross-disciplinary excellence.
             </Paragraph>
             <Link href="/faculty-directory">
               <button
@@ -98,7 +98,7 @@ const Doctors: React.FC = () => {
               <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-10">Harvard Medical Faculty • 15Y Excellence</p>
 
               <Paragraph className="text-xl text-slate-500 mb-10 italic leading-relaxed font-medium">
-                "We operate as a biological design studio, engineering recovery protocols previously thought impossible through molecular diagnostics."
+                &quot;We operate as a biological design studio, engineering recovery protocols previously thought impossible through molecular diagnostics.&quot;
               </Paragraph>
 
               <div className="grid grid-cols-2 gap-8 mb-12 pt-8 border-t border-slate-50">
@@ -129,7 +129,7 @@ const Doctors: React.FC = () => {
         {/* Directory Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {secondaryBoard.map((member) => (
-            <Link href={`/doctor-detail/${member.id}`}>
+            <Link key={member.id} href={`/doctor-detail/${member.id}`}>
               <div
                 key={member.id}
 

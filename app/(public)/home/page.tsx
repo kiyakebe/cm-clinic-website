@@ -14,14 +14,10 @@ import { Paragraph, Heading } from '@/components/ui/Typography';
 import { IconArrowRight, IconCircleDashed, IconShieldCheck } from '@tabler/icons-react';
 import Link from 'next/link';
 
-interface HomeProps {
-    navigate: (page: string, id?: string) => void;
-}
-
-const Home: React.FC<HomeProps> = ({ navigate }) => {
+const Home: React.FC = () => {
     return (
         <>
-            <Hero navigate={navigate} />
+            <Hero />
 
             {/* Philosophy Interstitial */}
             <section className="py-48 bg-white text-center overflow-hidden border-t border-slate-100/50">
@@ -30,9 +26,9 @@ const Home: React.FC<HomeProps> = ({ navigate }) => {
                         <span className="text-[25vw] font-black tracking-tighter uppercase text-slate-950">Philosophy</span>
                     </div>
                     <p className="text-4xl md:text-6xl font-bold text-slate-950 leading-[1.15] relative z-10 tracking-tighter max-w-5xl mx-auto italic">
-                        "Healing is a <span className="text-blue-600">matter of time</span>, <br />
+                        &quot;Healing is a <span className="text-blue-600">matter of time</span>, <br />
                         but it is also a <br />
-                        <span className="text-slate-950 not-italic font-black border-b-8 border-blue-600/5 px-2">matter of opportunity</span>."
+                        <span className="text-slate-950 not-italic font-black border-b-8 border-blue-600/5 px-2">matter of opportunity</span>.&quot;
                     </p>
                     <div className="mt-20 inline-flex flex-col items-center gap-3 relative z-10">
                         <div className="h-px w-12 bg-blue-600" />
@@ -41,7 +37,7 @@ const Home: React.FC<HomeProps> = ({ navigate }) => {
                 </div>
             </section>
 
-            <Services navigate={navigate} />
+            <Services />
             <Stats />
             <Methodology />
 

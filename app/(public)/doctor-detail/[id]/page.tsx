@@ -2,15 +2,23 @@
 import React from 'react';
 import { Heading, Paragraph, Display, Subheading } from '@/components/ui/Typography';
 import Button from '@/components/ui/Button';
-import { IconArrowLeft, IconAward, IconStethoscope, IconBooks, IconClock, IconMicroscope, IconCircleCheck, IconHexagon, IconFlask, IconArrowRight, IconShieldCheck } from '@tabler/icons-react';
+import { IconArrowLeft, IconAward, IconBooks, IconClock, IconMicroscope, IconCircleCheck, IconHexagon, IconFlask, IconArrowRight, IconShieldCheck } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
-interface DoctorDetailProps {
-    doctorId: string | null;
-    navigate: (page: string, id?: string) => void;
-}
-const doctorData: Record<string, any> = {
+
+const doctorData: Record<string, {
+    name: string;
+    title: string;
+    role: string;
+    pedigree: string;
+    bio: string;
+    publications: string[];
+    achievements: string[];
+    image: string;
+    stats: { hours: string; works: string };
+    domain: string;
+}> = {
     'alisa-thorne': {
         name: 'Dr. Alisa Thorne',
         title: 'Medical Director & Chief of Surgery',
@@ -60,7 +68,7 @@ const doctorData: Record<string, any> = {
         domain: 'Endocrine Flow'
     }
 };
-const DoctorDetail: React.FC<DoctorDetailProps> = () => {
+const DoctorDetail: React.FC = () => {
 
 
     const params = useParams();

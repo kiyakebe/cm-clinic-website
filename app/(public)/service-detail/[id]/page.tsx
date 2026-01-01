@@ -2,16 +2,21 @@
 import React from 'react';
 import { Heading, Paragraph, Display, Subheading } from '@/components/ui/Typography';
 import Button from '@/components/ui/Button';
-import { IconArrowLeft, IconCheck, IconActivity, IconStethoscope, IconDna, IconBrain, IconActivityHeartbeat, IconFlask, IconShieldCheck, IconCircleCheck, IconCircleNumber1 } from '@tabler/icons-react';
+import { IconArrowLeft, IconActivity, IconStethoscope, IconDna, IconBrain, IconActivityHeartbeat, IconFlask, IconShieldCheck, IconCircleCheck, IconCircleNumber1 } from '@tabler/icons-react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
-interface ServiceDetailProps {
-    serviceId: string | null;
-    navigate: (page: string, id?: string) => void;
-}
-
-const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, navigate }) => {
-    const serviceData: Record<string, any> = {
+const ServiceDetail: React.FC = () => {
+    const params = useParams();
+    const serviceId = params?.id as string | undefined;
+    const serviceData: Record<string, {
+        title: string;
+        subtitle: string;
+        icon: React.ReactNode;
+        content: string;
+        features: string[];
+        image: string;
+    }> = {
         'longevity': {
             title: 'Preventative Longevity',
             subtitle: 'The Science of Biological Deceleration',
@@ -75,7 +80,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, navigate }) =>
     if (!current) return (
         <div className="pt-40 text-center min-h-screen">
             <Heading>Protocol not found</Heading>
-            <button onClick={() => navigate('home')} className="mt-8 text-blue-600 font-bold hover:underline">Return to Portal</button>
+            <Link href="/" className="mt-8 text-blue-600 font-bold hover:underline">Return to Portal</Link>
         </div>
     );
 
@@ -132,7 +137,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId, navigate }) =>
                                 <p className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-600">Long-term Health Outcome</p>
                             </div>
                             <p className="text-2xl lg:text-3xl text-slate-950 font-black leading-tight italic tracking-tighter">
-                                "Our objective is a sustained biological baseline mirroring a physiological state <span className="text-blue-600">10-15 years younger</span> than chronological age."
+                                &quot;Our objective is a sustained biological baseline mirroring a physiological state <span className="text-blue-600">10-15 years younger</span> than chronological age.&quot;
                             </p>
                         </div>
                         <Link href="/booking">

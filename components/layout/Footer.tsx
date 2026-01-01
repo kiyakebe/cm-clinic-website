@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconStethoscope, IconMail, IconPhone, IconMapPin, IconBrandLinkedin, IconBrandTwitter, IconBrandInstagram, IconArrowUpRight, IconArrowRight, IconShieldCheck } from '@tabler/icons-react';
-import { Subheading, Paragraph } from '../ui/Typography';
+import { IconStethoscope, IconBrandLinkedin, IconBrandTwitter, IconBrandInstagram, IconArrowUpRight, IconShieldCheck } from '@tabler/icons-react';
+import { Paragraph } from '../ui/Typography';
 import Button from '../ui/Button';
 
 interface FooterProps {
@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({ navigate }) => {
     <footer className="bg-white border-t border-slate-100 pt-32 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 mb-24">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-10">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('home')}>

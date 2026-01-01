@@ -5,11 +5,7 @@ import { IconFlask, IconMicroscope, IconHexagon, IconArrowRight, IconSearch, Ico
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
 
-interface FacultyDirectoryProps {
-    navigate: (page: string, id?: string) => void;
-}
-
-const FacultyDirectory: React.FC<FacultyDirectoryProps> = ({ navigate }) => {
+const FacultyDirectory: React.FC = () => {
     const [filter, setFilter] = useState('All');
 
     const faculty = [
@@ -132,7 +128,7 @@ const FacultyDirectory: React.FC<FacultyDirectoryProps> = ({ navigate }) => {
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredFaculty.map((f) => (
-                            <Link href={`/doctor-detail/${f.id}`}>
+                            <Link key={f.id} href={`/doctor-detail/${f.id}`}>
                                 <div
                                     key={f.id}
                                     className="group cursor-pointer bg-white rounded-[2.5rem] p-8 border border-slate-100 hover:border-blue-100 transition-all duration-500 flex flex-col relative overflow-hidden"
@@ -196,10 +192,12 @@ const FacultyDirectory: React.FC<FacultyDirectoryProps> = ({ navigate }) => {
                                 </Paragraph>
                             </div>
                             <div className="lg:col-span-4 flex flex-col gap-4">
-                                <Button onClick={() => navigate('booking')} size="xl">
-                                    Consultation Request
-                                    <IconArrowRight size={18} />
-                                </Button>
+                                <Link href="/booking">
+                                    <Button size="xl">
+                                        Consultation Request
+                                        <IconArrowRight size={18} />
+                                    </Button>
+                                </Link>
                                 <p className="text-[9px] text-center font-bold text-slate-400 uppercase tracking-widest">
                                     Currently processing Q3 applications
                                 </p>

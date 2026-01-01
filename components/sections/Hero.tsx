@@ -4,11 +4,7 @@ import Button from '../ui/Button';
 import { Display, Paragraph } from '../ui/Typography';
 import Link from 'next/link';
 
-interface HeroProps {
-  navigate: (page: string) => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ navigate }) => {
+const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[95vh] flex items-center pt-40 pb-24 overflow-hidden bg-white">
       {/* Structural Accent */}

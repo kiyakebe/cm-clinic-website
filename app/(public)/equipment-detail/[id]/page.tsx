@@ -12,12 +12,9 @@ import {
 import {
     IconArrowLeft,
     IconShieldCheck,
-    IconBolt,
     IconClock,
     IconHexagon,
     IconArrowRight,
-    IconSettingsAutomation,
-    IconAtom2,
     IconCpu,
     IconActivity,
     IconCircleCheck,
@@ -28,7 +25,16 @@ const EquipmentDetail: React.FC = () => {
     const params = useParams();
     const equipmentId = params?.id as string | undefined;
 
-    const equipmentData: Record<string, any> = {
+    const equipmentData: Record<string, {
+        name: string;
+        category: string;
+        tagline: string;
+        desc: string;
+        image: string;
+        specs: { label: string; value: string }[];
+        features: string[];
+        clinical_use: string;
+    }> = {
         "illumino-seq": {
             name: "Illumina NovaSeq 6000",
             category: "Molecular Diagnostics",
@@ -136,7 +142,7 @@ const EquipmentDetail: React.FC = () => {
                             </Subheading>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {current.specs.map((spec: any, idx: number) => (
+                                {current.specs.map((spec: { label: string; value: string }, idx: number) => (
                                     <div
                                         key={idx}
                                         className="p-8 bg-slate-50 rounded-2xl border border-slate-100"

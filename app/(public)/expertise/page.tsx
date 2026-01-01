@@ -158,7 +158,7 @@ const Expertise: React.FC<ExpertiseProps> = ({ navigate }) => {
                     <IconMicroscope size={48} className="text-blue-100 mx-auto mb-8" stroke={1} />
                     <p className="text-[10px] font-black uppercase tracking-[0.5em] text-blue-600 mb-6">Medical Advisory</p>
                     <Paragraph className="text-lg text-slate-500 font-medium italic">
-                        "We treat every clinical domain as a biological ecosystem. Our methodology is rooted in the belief that systemic health can only be achieved through multi-disciplinary precision."
+                        &quot;We treat every clinical domain as a biological ecosystem. Our methodology is rooted in the belief that systemic health can only be achieved through multi-disciplinary precision.&quot;
                     </Paragraph>
                     <div className="mt-10 h-px w-16 bg-slate-200 mx-auto" />
                 </div>

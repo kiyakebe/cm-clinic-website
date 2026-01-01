@@ -4,11 +4,7 @@ import { IconCircleNumber1, IconCircleNumber2, IconCircleNumber3, IconChevronRig
 import { Heading, Paragraph, Subheading } from '../ui/Typography';
 import Link from 'next/link';
 
-interface ServicesProps {
-  navigate?: (page: string, id?: string) => void;
-}
-
-const Services: React.FC<ServicesProps> = ({ navigate }) => {
+const Services: React.FC = () => {
   const specializedAreas = [
     {
       id: 'longevity',
@@ -49,7 +45,7 @@ const Services: React.FC<ServicesProps> = ({ navigate }) => {
               your <span className="text-blue-600 italic">wellbeing</span>
             </Heading>
             <Paragraph className="mb-12 text-lg text-slate-500 leading-relaxed">
-              We've discarded the assembly-line medical model. Our services are interconnected, focusing on longitudinal health outcomes.
+              We&apos;ve discarded the assembly-line medical model. Our services are interconnected, focusing on longitudinal health outcomes.
             </Paragraph>
             <div className="p-10 bg-white rounded-3xl border border-slate-100 shadow-sm">
               <p className="text-sm font-bold text-slate-900 mb-2">Patient Portal</p>

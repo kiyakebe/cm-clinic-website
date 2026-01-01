@@ -47,7 +47,7 @@ const Philosophy: React.FC = () => {
                             <div className="p-10 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden group">
                                 <IconQuotes size={32} className="text-blue-200 mb-8" />
                                 <p className="text-slate-950 font-bold text-xl italic leading-snug mb-8 relative z-10">
-                                    "Healing is a matter of time, but it is also a matter of opportunity."
+                                    &quot;Healing is a matter of time, but it is also a matter of opportunity.&quot;
                                 </p>
                                 <div className="h-px w-12 bg-blue-600 mb-4" />
                                 <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Hippocrates, 460 BC</span>
@@ -91,7 +91,7 @@ const Philosophy: React.FC = () => {
                             </div>
                             <Subheading className="text-slate-950 !text-2xl mb-6 font-black italic tracking-tight">Empathetic <br />Precision</Subheading>
                             <Paragraph className="text-slate-500 text-base leading-relaxed">
-                                Precision medicine requires a deep understanding of each patient's unique journey, biological values, and lifestyle constraints.
+                                Precision medicine requires a deep understanding of each patient&apos;s unique journey, biological values, and lifestyle constraints.
                             </Paragraph>
                         </div>
                     </div>
@@ -163,7 +163,7 @@ const Philosophy: React.FC = () => {
                 <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                     <IconQuotes size={64} className="text-blue-200 mx-auto mb-12 opacity-50" />
                     <p className="text-3xl md:text-5xl font-black text-slate-900 italic tracking-tighter leading-[1.15] mb-12">
-                        "The aim of medicine is to prevent disease and prolong life; the ideal of medicine is to eliminate the need of a physician."
+                        &quot;The aim of medicine is to prevent disease and prolong life; the ideal of medicine is to eliminate the need of a physician.&quot;
                     </p>
                     <div className="inline-flex flex-col items-center gap-3">
                         <div className="h-px w-12 bg-blue-600" />

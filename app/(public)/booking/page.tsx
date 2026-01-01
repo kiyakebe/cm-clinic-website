@@ -123,18 +123,16 @@ import {
     IconArrowLeft,
     IconHexagon,
 } from "@tabler/icons-react";
-import { Heading, Paragraph, Display } from "@/components/ui/Typography";
+import { Paragraph, Display } from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 
 interface ComingSoonPageProps {
     title?: string;
-    navigate: (page: string) => void;
 }
 
 const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     title = "Appointments Coming Soon",
-    navigate,
 }) => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-white pt-20 px-6 overflow-hidden relative">

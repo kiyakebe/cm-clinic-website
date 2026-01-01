@@ -29,7 +29,7 @@ const FAQ: React.FC = () => {
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          
+
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="h-px w-6 bg-blue-600" />
@@ -37,7 +37,7 @@ const FAQ: React.FC = () => {
             </div>
             <Heading className="mb-8">Queries about <br />our <span className="text-blue-600">clinical care</span></Heading>
             <Paragraph className="text-slate-500 mb-10 max-w-sm">
-              Transparency is key to a trusting relationship. If you don't find what you need, our team is available.
+              Transparency is key to a trusting relationship. If you don&apos;t find what you need, our team is available.
             </Paragraph>
             <div className="flex items-center gap-4 p-8 bg-slate-50 rounded-3xl border border-slate-100">
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm text-blue-600">

@@ -1,7 +1,7 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { IconChevronLeft, IconChevronRight, IconQuote, IconActivity, IconCircleCheck } from '@tabler/icons-react';
-import { Heading, Paragraph, Subheading } from '../ui/Typography';
+import { Heading, Subheading } from '../ui/Typography';
 
 const Testimonials: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -29,13 +29,13 @@ const Testimonials: React.FC = () => {
     }
   ];
 
-  const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  const next = useCallback(() => setActiveIndex((prev) => (prev + 1) % testimonials.length), [testimonials.length]);
   const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   useEffect(() => {
     const timer = setInterval(next, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [next]);
 
   const current = testimonials[activeIndex];
 
@@ -43,7 +43,7 @@ const Testimonials: React.FC = () => {
     <section className="py-32 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          
+
           <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="inline-flex items-center gap-3 mb-10">
               <div className="h-px w-6 bg-blue-600" />
@@ -54,9 +54,9 @@ const Testimonials: React.FC = () => {
               <div className="flex items-center gap-4 mb-10">
                 <IconQuote className="text-blue-100" size={56} stroke={1.5} />
               </div>
-              
+
               <Heading className="mb-10 !text-3xl md:!text-4xl leading-snug font-medium text-slate-800 italic pr-8">
-                "{current.quote}"
+                &quot;{current.quote}&quot;
               </Heading>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
@@ -73,7 +73,7 @@ const Testimonials: React.FC = () => {
                   <span className="text-[9px] font-bold uppercase tracking-widest text-blue-600 block mb-1">Clinical Outcome</span>
                   <span className="text-2xl font-black text-slate-950 tracking-tighter italic">{current.outcome}</span>
                 </div>
-                
+
                 <div className="flex gap-3">
                   <button onClick={prev} className="w-12 h-12 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
                     <IconChevronLeft size={20} />
@@ -89,13 +89,13 @@ const Testimonials: React.FC = () => {
           <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="relative">
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-[16px] border-slate-50 relative group bg-slate-100">
-                <img 
-                  src={current.avatar} 
-                  alt={current.name} 
-                  className="w-full h-full object-cover grayscale opacity-90 transition-all duration-1000 group-hover:grayscale-0 animate-fadeIn" 
+                <img
+                  src={current.avatar}
+                  alt={current.name}
+                  className="w-full h-full object-cover grayscale opacity-90 transition-all duration-1000 group-hover:grayscale-0 animate-fadeIn"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                
+
                 <div className="absolute bottom-8 left-8 right-8 text-white">
                   <div className="flex items-center gap-2 mb-2">
                     <IconCircleCheck className="text-blue-400" size={16} />
@@ -113,8 +113,8 @@ const Testimonials: React.FC = () => {
 
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
                 {testimonials.map((_, i) => (
-                  <button 
-                    key={i} 
+                  <button
+                    key={i}
                     onClick={() => setActiveIndex(i)}
                     className={`h-1 rounded-full transition-all duration-500 ${activeIndex === i ? 'w-10 bg-blue-600' : 'w-3 bg-slate-200'}`}
                   />
