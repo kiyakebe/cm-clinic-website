@@ -175,7 +175,7 @@ const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
 
                 {/* Actions */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <Link href="/home">
+                    <Link href="/">
                         <Button
 
                             size="lg"

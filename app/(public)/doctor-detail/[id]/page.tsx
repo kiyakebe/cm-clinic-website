@@ -85,7 +85,7 @@ const DoctorDetail: React.FC = () => {
     return (
         <div className="pt-40 pb-32 bg-white min-h-screen">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                <Link href={"/home"}>
+                <Link href={"/"}>
                     <button
 
                         className="flex items-center gap-2 text-blue-600 font-black text-[10px] uppercase tracking-[0.4em] mb-16 hover:translate-x-[-6px] transition-transform group"
